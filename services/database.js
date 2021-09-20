@@ -1,11 +1,12 @@
-const {Client} = require('pg')
+const {Client} = require('pg');
+const env = process.env;
 
 const client = new Client({
-    host: "chunee.db.elephantsql.com",
-    user: "iwtixpcr",
-    port: 5432,
-    password: "7aMtNMPtL4FVYMdZhHenHYP8MEMXSStW",
-    database: "iwtixpcr",
+    host: env.DATABASE_HOST,
+    user: env.DATABASE_USER,
+    port: env.DATABASE_PORT,
+    password: env.DATABASE_PASSWORD,
+    database: env.DATABASE_NAME,
     query_timeout: 10000
 })
 
